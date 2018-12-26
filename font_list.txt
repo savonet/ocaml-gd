@@ -1,0 +1,7 @@
+# This file should contain the full paths of four TrueType font files
+# that exist on your system, as shown below.
+
+/usr/local/share/fonts/ttf/ancis___.ttf
+/usr/local/share/fonts/ttf/verdanab.ttf
+/usr/local/share/fonts/ttf/wurker__.ttf
+/usr/local/share/fonts/ttf/chancy.ttf

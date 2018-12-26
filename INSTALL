@@ -1,0 +1,66 @@
+How to Compile and Install GD4O
+===============================
+
+Version 1.0a5, November 24, 2003
+
+
+The following instructions are for installation with Findlib. In case
+you prefer not to use Findlib, I have included the old Makefile as
+'Makefile.orig'; it may work with little or no change.
+
+Prerequisites
+-------------
+ * Version numbers are those used in development. Earlier versions *
+ * have not been tested, and may or may not work. *
+
+OCaml 3.06/3.07
+  <http://caml.inria.fr/>
+Findlib 0.8.1/0.9
+  <http://www.ocaml-programming.de/packages/>
+GD 2.0.15
+  <http://www.boutell.com/gd/>
+
+OS: Linux (developed on Debian GNU/Linux 3.0); may work on other POSIX
+  systems. I hope to make the package portable to Windows in the future.
+
+
+Compiling and installing
+------------------------
+
+If you have properly installed the required packages, installation
+should be very easy.
+
+Edit the Makefile to reflect your configuration, then run.
+
+  make all
+  make opt  # optional, but highly recommended
+  make test
+    -OR-
+  make test.opt
+    -(assuming the test was successful)
+  make install
+
+Running the test suite--"make test"--is strongly recommended. See "Test
+script" below for more information.
+
+You may also wish to
+
+  make docs
+
+which will generate OCaml API docs in the doc/ subdirectory.
+
+
+Test script
+-----------
+
+This package includes a test script that exercises most functions of the
+API in at least rudimentary fashion. You can run the script with the
+command 'make test'.
+
+At the risk of stating the obvious: the powers of automated testing are
+very limited when applied to a graphics package of this kind. A
+successful test result means simply that the test was completed with no
+exceptions; there is no guarantee that the output is correct. 
+
+Therefore, to be sure that GD4O will produce the desired results, you
+should at least visually inspect all files produced by the test routine.

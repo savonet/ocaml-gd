@@ -1,0 +1,10 @@
+GD4O - known bugs as of Aug. 21, 2003
+=====================================
+
+* Antialiased drawing is dreadfully slow.
+
+* Antialiased lines of width > 1 appear as several overlapping lines rather
+  than a single wide line (may be a bug in GD itself).
+
+* When attempting to dump several images to an out_channel, the last one
+  is not written.

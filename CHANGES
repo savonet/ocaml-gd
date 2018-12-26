@@ -1,0 +1,105 @@
+Changes in version 1.0a5, 2003-11-24
+====================================
+
+* Copying and resizing
+    #image#copy             <-> gdImageCopy
+    #image#copy_resized     <-> gdImageCopyResized
+    #image#copy_resampled   <-> gdImageCopyResampled
+    #image#copy_rotated     <-> gdImageCopyRotated
+    #image#copy_merge       <-> gdImageCopyMerge
+    #image#copy_merge_gray  <-> gdImageCopyMergeGray
+    #image#palette_copy      <-> gdImagePaletteCopy
+
+* Added tests for all above functions
+
+
+Changes in version 1.0a4, 2003-08-21
+====================================
+
+* TrueType font support
+    #image#string_ftex  <-> gdImageStringFTEx
+    ftex_bbox           <-> gdImageStringFTEx (with null gdImagePtr)
+  - This is a partial implementation! gdImageStringFTEx does two
+    important things: render multiline text blocks, and render multi-
+    byte character strings (e.g. Chinese & Japanese). The C wrapper
+    should support both of these functions, but the OCaml function
+    currently requires a normal OCaml string, which means ASCII. So
+    we need to figure out how to integrate Unicode support to the
+    OCaml code.
+
+* ft_bbox & ftex_bbox are now global functions, rather than methods
+    of the image class. This way you can size your text before you
+    create an image.
+
+* Added test for #image#string_ftex
+
+* Added SAFER compile flag to enable safer execution (with a potential
+  loss in performance).
+
+
+Changes in version 1.0a3, 2003-08-11
+====================================
+
+* TrueType font support
+    #image#string_ft    <-> gdImageStringFT
+    #image#ft_bbox      <-> gdImageStringFT (with null gdImagePtr)
+
+* Continued improvements in test program.
+
+
+Changes in version 1.0a2, 2003-08-05
+====================================
+
+* New drawing methods:
+    #image#closed_arc    <-> gdImageFilledArc
+    #image#closed_chord  <-> gdImageFilledArc
+* New property settings:
+    #image#set_antialiased_dont_blend
+        <-> gdImageSetAntiAliasedDontBlend
+    #image#set_brush     <-> gdImageSetBrush
+    #image#set_tiled     <-> gdImageSetTile
+    #image#set_thickness <-> gdImageSetThickness
+    #image#set_clip      <-> gdImageSetClip
+* Truecolor images now supported:
+    create_truecolor to create new truecolor image; also,
+    open_png now tests for truecolor.
+* Changed implementation of color type from class to record.
+* More improvements in test program.
+
+
+Changes in version 1.0a1, 2003-08-04 (vs. OCamlGD 0.7)
+======================================================
+
+* Implemented new drawing methods:
+    #image#filled_ellipse <-> gdImageFilledEllipse
+    #image#polygon <-> gdImagePolygon
+    #image#filled_polygon <-> gdImageFilledPolygon
+* Corrected errors in C wrapper drawing functions:
+    ml_image_rect and ml_image_frect drew diagonal lines instead
+    of rectangles. Fixed.
+* Implemented antialiasing:
+    #image#set_antialiased to set antialias color
+    #color#allocator#antialiased to retrieve antialiased color
+* New Makefile uses Findlib
+    (saved old Makefile as Makefile.orig)
+* Added API cross-reference showing status of all API functions:
+    see 'doc/api-xref.html'.
+* New test program ('gdtest.ml') exercises the following functions:
+    create
+    #image#colors
+    #color_allocator#white
+    #color_allocator#create
+    #image#set_antialiased
+    #color_allocator#antialiased
+    #image#rectangle
+    #image#filled_rectangle
+    #image#polygon
+    #image#filled_polygon
+    #image#arc
+    #image#filled_ellipse
+    #image#string
+    #image#save_as_png
+    #image#save_as_jpeg
+    #image#out_as_png
+    #image#out_as_jpeg
+* Removed overly-obvious comments in gd.mli.

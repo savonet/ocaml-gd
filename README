@@ -1,0 +1,73 @@
+GD4O: OCaml wrapper for the GD graphics library.
+================================================
+
+Version 1.0a5, November 24, 2003
+Copyright (c) 2002 by Shawn Wagner
+Copyright (c) 2003 by Matthew C. Gushee
+
+************************************************************************
+WARNING: This is a developer's release, and may contain serious bugs.
+  Use in a production environment is not recommended.
+************************************************************************
+
+
+What is GD4O?
+-------------
+
+GD4O is an OCaml interface to the GD graphics library. It is based on
+OCamlGD 0.7, developed by Shawn Wagner. Since that package is not
+actively maintained at present--and, to the best of my knowledge, its
+author does not intend to continue working on it--I decided to take up
+development. 
+
+The goal of this project is to provide a complete and up-to-date
+interface to GD. The current version is very incomplete, but may be
+usable for very simple graphics.
+
+
+Major changes from OCamlGD
+--------------------------
+
+ * GD4O uses Findlib
+
+ * New drawing objects:
+  
+     polygon
+     filled_polygon
+     filled_ellipse
+
+ * Implemented antialiased drawing
+
+ * Truecolor images
+
+ * TrueType fonts
+
+ * Created more extensive test program, which draws most available
+   shapes and tests all output methods.
+
+
+Documentation
+-------------
+
+  INSTALL
+    How to compile and install the library and test program.
+  README.ocamlgd
+    README from OCamlGD 0.7
+  doc/manual.txt
+    Partial user's manual from OCamlGD. Should be enough to help you get
+    started.
+  doc/api-xref.html
+    Cross-reference from GD C API to OCaml API. Shows status of each
+    feature in GD4O, with links to GD library docs and GD4O API docs.
+  
+
+Comments, Questions, Bug reports
+--------------------------------
+
+Please send email to <gd4o@havenrock.com>
+
+Enjoy!
+
+
+November 24, 2003
+Matt Gushee <mgushee@havenrock.com>

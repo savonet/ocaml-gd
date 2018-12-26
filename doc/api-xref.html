@@ -1,0 +1,2658 @@
+<html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   
+      <title>
+         Haven Rock: GD4O API Cross-reference
+      </title>
+   <body bgcolor="#ffffff">
+      
+      <center>
+         <h1>GD4O API Cross-reference</h1>
+      </center>
+      <hr>
+      <hr><a name="intro"></a>
+          
+      <p>
+         The following tables list all functions in the GD API. Corresponding
+         OCaml function names are shown for all functions currently implemented
+               in GD4O. The <strong>When</strong> column shows when each function
+               was implemented: [0] indicates that the function was implemented in
+               OCamlGD 0.7; [1], [2], [3], [4], and [5] stand for GD4O releases 1.0a1,
+               1.0a2, 1.0a3, 1.0a4, and 1.0a5, respectively.
+             
+      </p>
+        
+          
+      <ol class="PageTOC0">
+               
+         <li><a href="#funcs.create">
+                         Image creation, destruction, loading, and saving
+                       </a></li>
+               
+         <li><a href="#funcs.drawing">
+                         Drawing functions
+                       </a></li>
+               
+         <li><a href="#funcs.query">
+                         Query functions
+                       </a></li>
+               
+         <li><a href="#funcs.font">
+                         Font and text-handling functions
+                       </a></li>
+               
+         <li><a href="#funcs.color">
+                         Color-handling functions
+                       </a></li>
+               
+         <li><a href="#funcs.copying">
+                         Copying and resizing functions
+                       </a></li>
+               
+         <li><a href="#funcs.misc">
+                         Miscellaneous functions
+                       </a></li>
+             
+      </ol>
+        <a name="funcs.create"></a>
+          
+      <h2>
+               Image creation, destruction, loading, and saving
+             
+      </h2>
+          
+      <table border="1" class="CoolTable1" width="96%" cellspacing="2" cellpadding="4">
+               
+         <tr>
+                    
+            <th>
+                         C Function
+                       
+            </th>
+                    
+            <th>
+                         When
+                       
+            </th>
+                    
+            <th>
+                         OCaml Function
+                       
+            </th>
+                    
+            <th>
+                         Comments 
+                       
+            </th>
+                  
+         </tr>
+               
+         <tr>
+                    
+            <td class="NameCell">
+                         <a href="http://www.boutell.com/gd/manual2.0.15.html#gdImageCreate">
+                              gdImageCreate
+                            </a><br>
+                       
+            </td>
+                    
+            <td class="BoolCell">
+                         [0]
+                       
+            </td>
+                    
+            <td class="NameCell">
+                         <a href="Gd.html#VALcreate">
+                              create
+                            </a><br>
+                       
+            </td>
+                    
+            <td class="TextCell">
+                       
+            </td>
+                  
+         </tr>
+               
+         <tr>
+                    
+            <td class="NameCell">
+                         <a href="http://www.boutell.com/gd/manual2.0.15.html#gdImageCreateTrueColor">
+                              gdImageCreateTrueColor
+                            </a><br>
+                       
+            </td>
+                    
+            <td class="BoolCell">
+                         [2]
+                       
+            </td>
+                    
+            <td class="NameCell">
+                         <a href="Gd.html#VALcreate_truecolor">
+                              create_truecolor
+                            </a><br>
+                       
+            </td>
+                    
+            <td class="TextCell">
+                       
+            </td>
+                  
+         </tr>
+               
+         <tr>
+                    
+            <td class="NameCell">
+                         <a href="http://www.boutell.com/gd/manual2.0.15.html#gdImageCreateFromJpeg">
+                              gdImageCreateFromJpeg
+                            </a><br>
+                       
+            </td>
+                    
+            <td class="BoolCell">
+                         [0]
+                       
+            </td>
+                    
+            <td class="NameCell">
+                         <a href="Gd.html#VALopen_jpeg">
+                              open_jpeg
+                            </a><br>
+                       
+            </td>
+                    
+            <td class="TextCell">
+                       
+            </td>
+                  
+         </tr>
+               
+         <tr>
+                    
+            <td class="NameCell">
+                         <a href="http://www.boutell.com/gd/manual2.0.15.html#gdImageCreateFromPng">
+                              gdImageCreateFromPng
+                            </a><br>
+                       
+            </td>
+                    
+            <td class="BoolCell">
+                         [0]
+                       
+            </td>
+                    
+            <td class="NameCell">
+                         <a href="Gd.html#VALopen_png">
+                              open_png
+                            </a><br>
+                       
+            </td>
+                    
+            <td class="TextCell">
+                       
+            </td>
+                  
+         </tr>
+               
+         <tr>
+                    
+            <td class="NameCell">
+                         <a href="http://www.boutell.com/gd/manual2.0.15.html#gdImageCreateFromPngSource">
+                              gdImageCreateFromPngSource
+                            </a><br>
+                       
+            </td>
+                    
+            <td class="BoolCell">
+                       
+            </td>
+                    
+            <td class="NameCell">
+                       
+            </td>
+                    
+            <td class="TextCell">
+                       
+            </td>
+                  
+         </tr>
+               
+         <tr>
+                    
+            <td class="NameCell">
+                         <a href="http://www.boutell.com/gd/manual2.0.15.html#gdImageCreateFromGd">
+                              gdImageCreateFromGd
+                            </a><br>
+                       
+            </td>
+                    
+            <td class="BoolCell">
+                       
+            </td>
+                    
+            <td class="NameCell">
+                       
+            </td>
+                    
+            <td class="TextCell">
+                       
+            </td>
+                  
+         </tr>
+               
+         <tr>
+                    
+            <td class="NameCell">
+                         <a href="http://www.boutell.com/gd/manual2.0.15.html#gdImageCreateFromGd2">
+                              gdImageCreateFromGd2
+                            </a><br>
+                       
+            </td>
+                    
+            <td class="BoolCell">
+                       
+            </td>
+                    
+            <td class="NameCell">
+                       
+            </td>
+                    
+            <td class="TextCell">
+                       
+            </td>
+                  
+         </tr>
+               
+         <tr>
+                    
+            <td class="NameCell">
+                         <a href="http://www.boutell.com/gd/manual2.0.15.html#gdImageCreateFromGd2Part">
+                              gdImageCreateFromGd2Part
+                            </a><br>
+                       
+            </td>
+                    
+            <td class="BoolCell">
+                       
+            </td>
+                    
+            <td class="NameCell">
+                       
+            </td>
+                    
+            <td class="TextCell">
+                       
+            </td>
+                  
+         </tr>
+               
+         <tr>
+                    
+            <td class="NameCell">
+                         <a href="http://www.boutell.com/gd/manual2.0.15.html#gdImageCreateFromXbm">
+                              gdImageCreateFromXbm
+                            </a><br>
+                       
+            </td>
+                    
+            <td class="BoolCell">
+                       
+            </td>
+                    
+            <td class="NameCell">
+                       
+            </td>
+                    
+            <td class="TextCell">
+                       
+            </td>
+                  
+         </tr>
+               
+         <tr>
+                    
+            <td class="NameCell">
+                         <a href="http://www.boutell.com/gd/manual2.0.15.html#gdImageCreateFromXpm">
+                              gdImageCreateFromXpm
+                            </a><br>
+                       
+            </td>
+                    
+            <td class="BoolCell">
+                       
+            </td>
+                    
+            <td class="NameCell">
+                       
+            </td>
+                    
+            <td class="TextCell">
+                       
+            </td>
+                  
+         </tr>
+               
+         <tr>
+                    
+            <td class="NameCell">
+                         <a href="http://www.boutell.com/gd/manual2.0.15.html#gdImageDestroy">
+                              gdImageDestroy
+                            </a><br> 
+                       
+            </td>
+                    
+            <td class="BoolCell">
+                       
+            </td>
+                    
+            <td class="NameCell">
+                       
+            </td>
+                    
+            <td class="TextCell">
+                       
+            </td>
+                  
+         </tr>
+               
+         <tr>
+                    
+            <td class="NameCell">
+                         <a href="http://www.boutell.com/gd/manual2.0.15.html#gdImageJpeg">
+                              gdImageJpeg
+                            </a><br>
+                       
+            </td>
+                    
+            <td class="BoolCell">
+                         [0]
+                       
+            </td>
+                    
+            <td class="NameCell">
+                         <a href="Gd.image.html#METHODsave_as_jpeg">
+                              #image#save_as_jpeg
+                            </a><br>
+                       
+            </td>
+                    
+            <td class="TextCell">
+                       
+            </td>
+                  
+         </tr>
+               
+         <tr>
+                    
+            <td class="NameCell">
+                         <a href="http://www.boutell.com/gd/manual2.0.15.html#gdImageJpegPtr">
+                              gdImageJpegPtr
+                            </a><br>
+                       
+            </td>
+                    
+            <td class="BoolCell">
+                       
+            </td>
+                    
+            <td class="NameCell">
+                       
+            </td>
+                    
+            <td class="TextCell">
+                       
+            </td>
+                  
+         </tr>
+               
+         <tr>
+                    
+            <td class="NameCell">
+                         <a href="http://www.boutell.com/gd/manual2.0.15.html#gdImagePng">
+                              gdImagePng
+                            </a><br>
+                       
+            </td>
+                    
+            <td class="BoolCell">
+                         [0]
+                       
+            </td>
+                    
+            <td class="NameCell">
+                         <a href="Gd.image.html#METHODsave_as_png">
+                              #image#save_as_png
+                            </a><br>
+                       
+            </td>
+                    
+            <td class="TextCell">
+                       
+            </td>
+                  
+         </tr>
+               
+         <tr>
+                    
+            <td class="NameCell">
+                         <a href="http://www.boutell.com/gd/manual2.0.15.html#gdImagePngEx">
+                              gdImagePngEx
+                            </a><br>
+                       
+            </td>
+                    
+            <td class="BoolCell">
+                       
+            </td>
+                    
+            <td class="NameCell">
+                       
+            </td>
+                    
+            <td class="TextCell">
+                       
+            </td>
+                  
+         </tr>
+               
+         <tr>
+                    
+            <td class="NameCell">
+                         <a href="http://www.boutell.com/gd/manual2.0.15.html#gdImagePngPtr">
+                              gdImagePngPtr
+                            </a><br>
+                       
+            </td>
+                    
+            <td class="BoolCell">
+                       
+            </td>
+                    
+            <td class="NameCell">
+                       
+            </td>
+                    
+            <td class="TextCell">
+                       
+            </td>
+                  
+         </tr>
+               
+         <tr>
+                    
+            <td class="NameCell">
+                         <a href="http://www.boutell.com/gd/manual2.0.15.html#gdImagePngPtrEx">
+                              gdImagePngPtrEx
+                            </a><br>
+                       
+            </td>
+                    
+            <td class="BoolCell">
+                       
+            </td>
+                    
+            <td class="NameCell">
+                       
+            </td>
+                    
+            <td class="TextCell">
+                       
+            </td>
+                  
+         </tr>
+               
+         <tr>
+                    
+            <td class="NameCell">
+                         <a href="http://www.boutell.com/gd/manual2.0.15.html#gdImagePngToSink">
+                              gdImagePngToSink
+                            </a><br>
+                       
+            </td>
+                    
+            <td class="BoolCell">
+                         [0]
+                       
+            </td>
+                    
+            <td class="NameCell">
+                         <a href="Gd.image.html#METHODout_as_png">
+                              #image#out_as_png
+                            </a><br>
+                       
+            </td>
+                    
+            <td class="TextCell">
+                       
+            </td>
+                  
+         </tr>
+               
+         <tr>
+                    
+            <td class="NameCell">
+                         <a href="http://www.boutell.com/gd/manual2.0.15.html#gdImageWBMP">
+                              gdImageWBMP
+                            </a><br>
+                       
+            </td>
+                    
+            <td class="BoolCell">
+                       
+            </td>
+                    
+            <td class="NameCell">
+                       
+            </td>
+                    
+            <td class="TextCell">
+                       
+            </td>
+                  
+         </tr>
+               
+         <tr>
+                    
+            <td class="NameCell">
+                         <a href="http://www.boutell.com/gd/manual2.0.15.html#gdImageWBMPPtr">
+                              gdImageWBMPPtr
+                            </a><br>
+                       
+            </td>
+                    
+            <td class="BoolCell">
+                       
+            </td>
+                    
+            <td class="NameCell">
+                       
+            </td>
+                    
+            <td class="TextCell">
+                       
+            </td>
+                  
+         </tr>
+               
+         <tr>
+                    
+            <td class="NameCell">
+                         <a href="http://www.boutell.com/gd/manual2.0.15.html#gdImageGd">
+                              gdImageGd
+                            </a><br>
+                       
+            </td>
+                    
+            <td class="BoolCell">
+                       
+            </td>
+                    
+            <td class="NameCell">
+                       
+            </td>
+                    
+            <td class="TextCell">
+                       
+            </td>
+                  
+         </tr>
+               
+         <tr>
+                    
+            <td class="NameCell">
+                         <a href="http://www.boutell.com/gd/manual2.0.15.html#gdImageGdPtr">
+                              gdImageGdPtr
+                            </a><br>
+                       
+            </td>
+                    
+            <td class="TextCell">
+                       
+            </td>
+                    
+            <td class="NameCell">
+                       
+            </td>
+                    
+            <td class="TextCell">
+                       
+            </td>
+                  
+         </tr>
+               
+         <tr>
+                    
+            <td class="NameCell">
+                         <a href="http://www.boutell.com/gd/manual2.0.15.html#gdImageGd2">
+                              gdImageGd2
+                            </a><br>
+                       
+            </td>
+                    
+            <td class="BoolCell">
+                       
+            </td>
+                    
+            <td class="NameCell">
+                       
+            </td>
+                    
+            <td class="TextCell">
+                       
+            </td>
+                  
+         </tr>
+               
+         <tr>
+                    
+            <td class="NameCell">
+                         <a href="http://www.boutell.com/gd/manual2.0.15.html#gdImageGd2Ptr">
+                              gdImageGd2Ptr
+                            </a><br>
+                       
+            </td>
+                    
+            <td class="TextCell">
+                       
+            </td>
+                    
+            <td class="NameCell">
+                       
+            </td>
+                    
+            <td class="TextCell">
+                       
+            </td>
+                  
+         </tr>
+               
+         <tr>
+                    
+            <td class="NameCell">
+                         <a href="http://www.boutell.com/gd/manual2.0.15.html#gdImageTrueColorToPalette">
+                              gdImageTrueColorToPalette
+                            </a><br>
+                       
+            </td>
+                    
+            <td class="BoolCell">
+                       
+            </td>
+                    
+            <td class="NameCell">
+                       
+            </td>
+                    
+            <td class="TextCell">
+                       
+            </td>
+                  
+         </tr>
+             
+      </table>
+        <a name="funcs.drawing"></a>
+          
+      <h2>
+               Drawing functions
+             
+      </h2>
+          
+      <table border="1" class="CoolTable1" width="96%" cellspacing="2" cellpadding="4">
+               
+         <tr>
+                    
+            <th>
+                         C Function
+                       
+            </th>
+                    
+            <th>
+                         When
+                       
+            </th>
+                    
+            <th>
+                         OCaml Function
+                       
+            </th>
+                    
+            <th>
+                         Comments 
+                       
+            </th>
+                  
+         </tr>
+               
+         <tr>
+                    
+            <td class="NameCell">
+                         <a href="http://www.boutell.com/gd/manual2.0.15.html#gdImageSetPixel">
+                              gdImageSetPixel
+                            </a><br> 
+                       
+            </td>
+                    
+            <td class="BoolCell">
+                         [0]
+                       
+            </td>
+                    
+            <td class="NameCell">
+                         <a href="Gd.image.html#METHODset_pixel">
+                              #image#set_pixel
+                            </a><br>
+                       
+            </td>
+                    
+            <td class="TextCell">
+                       
+            </td>
+                  
+         </tr>
+               
+         <tr>
+                    
+            <td class="NameCell">
+                         <a href="http://www.boutell.com/gd/manual2.0.15.html#gdImageLine">
+                              gdImageLine
+                            </a><br>
+                       
+            </td>
+                    
+            <td class="BoolCell">
+                         [0]
+                       
+            </td>
+                    
+            <td class="NameCell">
+                         <a href="Gd.image.html#METHODline">
+                              #image#line
+                            </a><br>
+                       
+            </td>
+                    
+            <td class="TextCell">
+                       
+            </td>
+                  
+         </tr>
+               
+         <tr>
+                    
+            <td class="NameCell">
+                         <a href="http://www.boutell.com/gd/manual2.0.15.html#gdImageDashedLine">
+                              gdImageDashedLine
+                            </a><br>
+                       
+            </td>
+                    
+            <td class="BoolCell">
+                         [0]
+                       
+            </td>
+                    
+            <td class="NameCell">
+                         <a href="Gd.image.html#METHODdashed_line">
+                              #image#dashed_line
+                            </a><br>
+                       
+            </td>
+                    
+            <td class="TextCell">
+                       
+            </td>
+                  
+         </tr>
+               
+         <tr>
+                    
+            <td class="NameCell">
+                         <a href="http://www.boutell.com/gd/manual2.0.15.html#gdImagePolygon">
+                              gdImagePolygon
+                            </a><br>
+                       
+            </td>
+                    
+            <td class="BoolCell">
+                         [1]
+                       
+            </td>
+                    
+            <td class="NameCell">
+                         <a href="Gd.image.html#METHODpolygon">
+                              #image#polygon
+                            </a><br>
+                       
+            </td>
+                    
+            <td class="TextCell">
+                       
+            </td>
+                  
+         </tr>
+               
+         <tr>
+                    
+            <td class="NameCell">
+                         <a href="http://www.boutell.com/gd/manual2.0.15.html#gdImageRectangle">
+                              gdImageRectangle
+                            </a><br>
+                       
+            </td>
+                    
+            <td class="BoolCell">
+                         [0]
+                       
+            </td>
+                    
+            <td class="NameCell">
+                         <a href="Gd.image.html#METHODrectangle">
+                              #image#rectangle
+                            </a><br>
+                       
+            </td>
+                    
+            <td class="TextCell">
+                       
+            </td>
+                  
+         </tr>
+               
+         <tr>
+                    
+            <td class="NameCell">
+                         <a href="http://www.boutell.com/gd/manual2.0.15.html#gdImageFilledPolygon">
+                              gdImageFilledPolygon
+                            </a><br>
+                       
+            </td>
+                    
+            <td class="BoolCell">
+                         [1]
+                       
+            </td>
+                    
+            <td class="NameCell">
+                         <a href="Gd.image.html#METHODfilled_polygon">
+                              #image#filled_polygon
+                            </a><br>
+                       
+            </td>
+                    
+            <td class="TextCell">
+                       
+            </td>
+                  
+         </tr>
+               
+         <tr>
+                    
+            <td class="NameCell">
+                         <a href="http://www.boutell.com/gd/manual2.0.15.html#gdImageFilledRectangle">
+                              gdImageFilledRectangle
+                            </a><br>
+                       
+            </td>
+                    
+            <td class="BoolCell">
+                         [0]
+                       
+            </td>
+                    
+            <td class="NameCell">
+                         <a href="Gd.image.html#METHODfilled_rectangle">
+                              #image#filled_rectangle
+                            </a><br>
+                       
+            </td>
+                    
+            <td class="TextCell">
+                       
+            </td>
+                  
+         </tr>
+               
+         <tr>
+                    
+            <td class="NameCell">
+                         <a href="http://www.boutell.com/gd/manual2.0.15.html#gdImageArc">
+                              gdImageArc
+                            </a><br>
+                       
+            </td>
+                    
+            <td class="BoolCell">
+                         [0]
+                       
+            </td>
+                    
+            <td class="NameCell">
+                         <a href="Gd.image.html#METHODarc">
+                              #image#arc
+                            </a><br>
+                       
+            </td>
+                    
+            <td class="TextCell">
+                       
+            </td>
+                  
+         </tr>
+               
+         <tr>
+                    
+            <td class="NameCell">
+                         <a href="http://www.boutell.com/gd/manual2.0.15.html#gdImageFilledArc">
+                              gdImageFilledArc
+                            </a><br>
+                       
+            </td>
+                    
+            <td class="BoolCell">
+                         [2]
+                       
+            </td>
+                    
+            <td class="NameCell">
+                         <a href="Gd.image.html#METHODclosed_arc">
+                              #image#closed_arc
+                            </a><br> &amp;
+                         <a href="Gd.image.html#METHODclosed_chord">
+                              #image#closed_chord
+                            </a><br>
+                       
+            </td>
+                    
+            <td class="TextCell">
+                         In the C library, 'FilledArc' takes a bitwise OR of several flags. But those
+                         flags include one that specifies an arc, and another that specifies a chord
+                         - which are in fact mutually exclusive drawing operations. Seems like rather
+                         poor design to me, so I separated FilledArc into two methods. Furthermore, the
+                         word 'closed' seems to me a more accurate description of what the method does.
+                       
+            </td>
+                  
+         </tr>
+               
+         <tr>
+                    
+            <td class="NameCell">
+                         <a href="http://www.boutell.com/gd/manual2.0.15.html#gdImageFilledEllipse">
+                              gdImageFilledEllipse
+                            </a><br>
+                       
+            </td>
+                    
+            <td class="BoolCell">
+                         [1]
+                       
+            </td>
+                    
+            <td class="NameCell">
+                         <a href="Gd.image.html#METHODfilled_ellipse">
+                              #image#filled_ellipse
+                            </a><br>
+                       
+            </td>
+                    
+            <td class="TextCell">
+                       
+            </td>
+                  
+         </tr>
+               
+         <tr>
+                    
+            <td class="NameCell">
+                         <a href="http://www.boutell.com/gd/manual2.0.15.html#gdImageFillToBorder">
+                              gdImageFillToBorder
+                            </a><br>
+                       
+            </td>
+                    
+            <td class="BoolCell">
+                         [0]
+                       
+            </td>
+                    
+            <td class="NameCell">
+                         <a href="Gd.image.html#METHODborder_fill">
+                              #image#border_fill
+                            </a><br>
+                       
+            </td>
+                    
+            <td class="TextCell">
+                         This function works when called from a native code executable, but
+                         when called from byte code, it seems to go into infinite recursion.
+                       
+            </td>
+                  
+         </tr>
+               
+         <tr>
+                    
+            <td class="NameCell">
+                         <a href="http://www.boutell.com/gd/manual2.0.15.html#gdImageFill">
+                              gdImageFill
+                            </a><br>
+                       
+            </td>
+                    
+            <td class="BoolCell">
+                         [0]
+                       
+            </td>
+                    
+            <td class="NameCell">
+                         <a href="Gd.image.html#METHODfill">
+                              #image#fill
+                            </a><br>
+                       
+            </td>
+                    
+            <td class="TextCell">
+                       
+            </td>
+                  
+         </tr>
+               
+         <tr>
+                    
+            <td class="NameCell">
+                         <a href="http://www.boutell.com/gd/manual2.0.15.html#gdImageSetAntiAliased">
+                              gdImageSetAntiAliased
+                            </a><br>
+                       
+            </td>
+                    
+            <td class="BoolCell">
+                         [1]
+                       
+            </td>
+                    
+            <td class="NameCell">
+                         <a href="Gd.image.html#METHODset_antialiased">
+                              #image#set_antialiased
+                            </a><br>
+                       
+            </td>
+                    
+            <td class="TextCell">
+                         Antialiased drawing is surprisingly slow. Must be something sub-optimal
+                         in the C wrapper.
+                       
+            </td>
+                  
+         </tr>
+               
+         <tr>
+                    
+            <td class="NameCell">
+                         <a href="http://www.boutell.com/gd/manual2.0.15.html#gdImageSetAntiAliasedDontBlend">
+                              gdImageSetAntiAliasedDontBlend
+                            </a><br>
+                       
+            </td>
+                    
+            <td class="BoolCell">
+                         [2]
+                       
+            </td>
+                    
+            <td class="NameCell">
+                         <a href="Gd.image.html#METHODset_antialiased_dontblend">
+                              #image#set_antialiased_dontblend
+                            </a><br>
+                       
+            </td>
+                    
+            <td class="TextCell">
+                       
+            </td>
+                  
+         </tr>
+               
+         <tr>
+                    
+            <td class="NameCell">
+                         <a href="http://www.boutell.com/gd/manual2.0.15.html#gdImageSetBrush">
+                              gdImageSetBrush
+                            </a><br>
+                       
+            </td>
+                    
+            <td class="BoolCell">
+                         [2]
+                       
+            </td>
+                    
+            <td class="NameCell">
+                         <a href="Gd.image.html#METHODset_brush">
+                              #image#set_brush
+                            </a><br>
+                       
+            </td>
+                    
+            <td class="TextCell">
+                       
+            </td>
+                  
+         </tr>
+               
+         <tr>
+                    
+            <td class="NameCell">
+                         <a href="http://www.boutell.com/gd/manual2.0.15.html#gdImageSetTile">
+                              gdImageSetTile
+                            </a><br>
+                       
+            </td>
+                    
+            <td class="BoolCell">
+                         [2]
+                       
+            </td>
+                    
+            <td class="NameCell">
+                         <a href="Gd.image.html#METHODset_tile">
+                              #image#set_tile
+                            </a><br>
+                       
+            </td>
+                    
+            <td class="TextCell">
+                       
+            </td>
+                  
+         </tr>
+               
+         <tr>
+                    
+            <td class="NameCell">
+                         <a href="http://www.boutell.com/gd/manual2.0.15.html#gdImageSetStyle">
+                              gdImageSetStyle
+                            </a><br>
+                       
+            </td>
+                    
+            <td class="BoolCell">
+                       
+            </td>
+                    
+            <td class="NameCell">
+                       
+            </td>
+                    
+            <td class="TextCell">
+                       
+            </td>
+                  
+         </tr>
+               
+         <tr>
+                    
+            <td class="NameCell">
+                         <a href="http://www.boutell.com/gd/manual2.0.15.html#gdImageSetThickness">
+                              gdImageSetThickness
+                            </a><br> 
+                       
+            </td>
+                    
+            <td class="BoolCell">
+                         [2]
+                       
+            </td>
+                    
+            <td class="NameCell">
+                         <a href="Gd.image.html#METHODset_thickness">
+                              #image#set_thickness
+                            </a><br>
+                       
+            </td>
+                    
+            <td class="TextCell">
+                       
+            </td>
+                  
+         </tr>
+               
+         <tr>
+                    
+            <td class="NameCell">
+                         <a href="http://www.boutell.com/gd/manual2.0.15.html#gdImageAlphaBlending">
+                              gdImageAlphaBlending
+                            </a><br>
+                       
+            </td>
+                    
+            <td class="BoolCell">
+                       
+            </td>
+                    
+            <td class="NameCell">
+                       
+            </td>
+                    
+            <td class="TextCell">
+                       
+            </td>
+                  
+         </tr>
+               
+         <tr>
+                    
+            <td class="NameCell">
+                         <a href="http://www.boutell.com/gd/manual2.0.15.html#gdImageSaveAlpha">
+                              gdImageSaveAlpha
+                            </a><br>
+                       
+            </td>
+                    
+            <td class="BoolCell">
+                       
+            </td>
+                    
+            <td class="NameCell">
+                       
+            </td>
+                    
+            <td class="TextCell">
+                       
+            </td>
+                  
+         </tr>
+               
+         <tr>
+                    
+            <td class="NameCell">
+                         <a href="http://www.boutell.com/gd/manual2.0.15.html#gdImageSetClip">
+                              gdImageSetClip
+                            </a><br>
+                       
+            </td>
+                    
+            <td class="BoolCell">
+                         [2]
+                       
+            </td>
+                    
+            <td class="NameCell">
+                         <a href="Gd.image.html#METHODset_clip">
+                              #image#set_clip
+                            </a><br>
+                       
+            </td>
+                    
+            <td class="TextCell">
+                       
+            </td>
+                  
+         </tr>
+               
+         <tr>
+                    
+            <td class="NameCell">
+                         <a href="http://www.boutell.com/gd/manual2.0.15.html#gdImageGetClip">
+                              gdImageGetClip
+                            </a><br>
+                       
+            </td>
+                    
+            <td class="BoolCell">
+                       
+            </td>
+                    
+            <td class="NameCell">
+                       
+            </td>
+                    
+            <td class="TextCell">
+                       
+            </td>
+                  
+         </tr>
+               
+         <tr>
+                    
+            <td class="NameCell">
+                         <a href="http://www.boutell.com/gd/manual2.0.15.html#gdImageBlue">
+                              gdImageBlue
+                            </a><br>
+                       
+            </td>
+                    
+            <td class="BoolCell">
+                       
+            </td>
+                    
+            <td class="NameCell">
+                       
+            </td>
+                    
+            <td class="TextCell">
+                       
+            </td>
+                  
+         </tr>
+             
+      </table>
+        <a name="funcs.query"></a>
+          
+      <h2>
+               Query functions
+             
+      </h2>
+          
+      <table border="1" class="CoolTable1" width="96%" cellspacing="2" cellpadding="4">
+               
+         <tr>
+                    
+            <th>
+                         C Function
+                       
+            </th>
+                    
+            <th>
+                         When
+                       
+            </th>
+                    
+            <th>
+                         OCaml Function
+                       
+            </th>
+                    
+            <th>
+                         Comments 
+                       
+            </th>
+                  
+         </tr>
+               
+         <tr>
+                    
+            <td class="NameCell">
+                         <a href="http://www.boutell.com/gd/manual2.0.15.html#gdImageAlpha">
+                              gdImageAlpha
+                            </a><br>
+                       
+            </td>
+                    
+            <td class="BoolCell">
+                       
+            </td>
+                    
+            <td class="NameCell">
+                       
+            </td>
+                    
+            <td class="TextCell">
+                       
+            </td>
+                  
+         </tr>
+               
+         <tr>
+                    
+            <td class="NameCell">
+                         <a href="http://www.boutell.com/gd/manual2.0.15.html#gdImageGetPixel">
+                              gdImageGetPixel
+                            </a><br>
+                       
+            </td>
+                    
+            <td class="BoolCell">
+                         [0]
+                       
+            </td>
+                    
+            <td class="NameCell">
+                         <a href="Gd.image.html#METHODget_pixel">
+                              #image#get_pixel
+                            </a><br>
+                       
+            </td>
+                    
+            <td class="TextCell">
+                       
+            </td>
+                  
+         </tr>
+               
+         <tr>
+                    
+            <td class="NameCell">
+                         <a href="http://www.boutell.com/gd/manual2.0.15.html#gdImageBoundsSafe">
+                              gdImageBoundsSafe
+                            </a><br>
+                       
+            </td>
+                    
+            <td class="BoolCell">
+                         [0]
+                       
+            </td>
+                    
+            <td class="NameCell">
+                         <a href="Gd.image.html#METHODin_range">
+                              #image#in_range
+                            </a><br>
+                       
+            </td>
+                    
+            <td class="TextCell">
+                       
+            </td>
+                  
+         </tr>
+               
+         <tr>
+                    
+            <td class="NameCell">
+                         <a href="http://www.boutell.com/gd/manual2.0.15.html#gdImageGreen">
+                              gdImageGreen
+                            </a><br>
+                       
+            </td>
+                    
+            <td class="BoolCell">
+                       
+            </td>
+                    
+            <td class="NameCell">
+                       
+            </td>
+                    
+            <td class="TextCell">
+                       
+            </td>
+                  
+         </tr>
+               
+         <tr>
+                    
+            <td class="NameCell">
+                         <a href="http://www.boutell.com/gd/manual2.0.15.html#gdImageRed">
+                              gdImageRed
+                            </a><br>
+                       
+            </td>
+                    
+            <td class="BoolCell">
+                       
+            </td>
+                    
+            <td class="NameCell">
+                       
+            </td>
+                    
+            <td class="TextCell">
+                       
+            </td>
+                  
+         </tr>
+               
+         <tr>
+                    
+            <td class="NameCell">
+                         <a href="http://www.boutell.com/gd/manual2.0.15.html#gdImageSX">
+                              gdImageSX
+                            </a><br>
+                       
+            </td>
+                    
+            <td class="BoolCell">
+                         [0]
+                       
+            </td>
+                    
+            <td class="NameCell">
+                         <a href="Gd.image.html#METHODwidth">
+                              #image#width
+                            </a><br>
+                       
+            </td>
+                    
+            <td class="TextCell">
+                       
+            </td>
+                  
+         </tr>
+               
+         <tr>
+                    
+            <td class="NameCell">
+                         <a href="http://www.boutell.com/gd/manual2.0.15.html#gdImageSY">
+                              gdImageSY
+                            </a><br>
+                       
+            </td>
+                    
+            <td class="BoolCell">
+                         [0]
+                       
+            </td>
+                    
+            <td class="NameCell">
+                         <a href="Gd.image.html#METHODheight">
+                              #image#height
+                            </a><br>
+                       
+            </td>
+                    
+            <td class="TextCell">
+                       
+            </td>
+                  
+         </tr>
+             
+      </table>
+        <a name="funcs.font"></a>
+          
+      <h2>
+               Font and text-handling functions
+             
+      </h2>
+          
+      <table border="1" class="CoolTable1" width="96%" cellspacing="2" cellpadding="4">
+               
+         <tr>
+                    
+            <th>
+                         C Function
+                       
+            </th>
+                    
+            <th>
+                         When
+                       
+            </th>
+                    
+            <th>
+                         OCaml Function
+                       
+            </th>
+                    
+            <th>
+                         Comments 
+                       
+            </th>
+                  
+         </tr>
+               
+         <tr>
+                    
+            <td class="NameCell">
+                         <a href="http://www.boutell.com/gd/manual2.0.15.html#gdImageChar">
+                              gdImageChar
+                            </a><br>
+                       
+            </td>
+                    
+            <td class="BoolCell">
+                         [0]
+                       
+            </td>
+                    
+            <td class="NameCell">
+                         <a href="Gd.image.html#METHODletter">
+                              #image#letter
+                            </a><br>
+                       
+            </td>
+                    
+            <td class="TextCell">
+                       
+            </td>
+                  
+         </tr>
+               
+         <tr>
+                    
+            <td class="NameCell">
+                         <a href="http://www.boutell.com/gd/manual2.0.15.html#gdImageCharUp">
+                              gdImageCharUp
+                            </a><br>
+                       
+            </td>
+                    
+            <td class="BoolCell">
+                         [0]
+                       
+            </td>
+                    
+            <td class="NameCell">
+                         <a href="Gd.image.html#METHODletter_up">
+                              #image#letter_up
+                            </a><br>
+                       
+            </td>
+                    
+            <td class="TextCell">
+                       
+            </td>
+                  
+         </tr>
+               
+         <tr>
+                    
+            <td class="NameCell">
+                         <a href="http://www.boutell.com/gd/manual2.0.15.html#gdImageString">
+                              gdImageString
+                            </a><br>
+                       
+            </td>
+                    
+            <td class="BoolCell">
+                         [0]
+                       
+            </td>
+                    
+            <td class="NameCell">
+                         <a href="Gd.image.html#METHODstring">
+                              #image#string
+                            </a><br>
+                       
+            </td>
+                    
+            <td class="TextCell">
+                       
+            </td>
+                  
+         </tr>
+               
+         <tr>
+                    
+            <td class="NameCell">
+                         <a href="http://www.boutell.com/gd/manual2.0.15.html#gdImageString16">
+                              gdImageString16
+                            </a><br>
+                       
+            </td>
+                    
+            <td class="BoolCell">
+                       
+            </td>
+                    
+            <td class="NameCell">
+                       
+            </td>
+                    
+            <td class="TextCell">
+                       
+            </td>
+                  
+         </tr>
+               
+         <tr>
+                    
+            <td class="NameCell">
+                         <a href="http://www.boutell.com/gd/manual2.0.15.html#gdImageStringUp">
+                              gdImageStringUp
+                            </a><br>
+                       
+            </td>
+                    
+            <td class="BoolCell">
+                         [0]
+                       
+            </td>
+                    
+            <td class="NameCell">
+                         <a href="Gd.image.html#METHODstring_up">
+                              #image#string_up
+                            </a><br>
+                       
+            </td>
+                    
+            <td class="TextCell">
+                       
+            </td>
+                  
+         </tr>
+               
+         <tr>
+                    
+            <td class="NameCell">
+                         <a href="http://www.boutell.com/gd/manual2.0.15.html#gdImageStringUp16">
+                              gdImageStringUp16
+                            </a><br>
+                       
+            </td>
+                    
+            <td class="BoolCell">
+                       
+            </td>
+                    
+            <td class="NameCell">
+                       
+            </td>
+                    
+            <td class="TextCell">
+                       
+            </td>
+                  
+         </tr>
+               
+         <tr>
+                    
+            <td class="NameCell">
+                         <a href="http://www.boutell.com/gd/manual2.0.15.html#gdImageStringFT">
+                              gdImageStringFT
+                            </a><br>
+                       
+            </td>
+                    
+            <td class="BoolCell">
+                         [3]
+                       
+            </td>
+                    
+            <td class="NameCell">
+                         <a href="Gd.image.html#METHODstring_ft">
+                              #image#string_ft
+                            </a><br> &amp;
+                         <a href="Gd.image.html#METHODft_bbox">
+                              ft_bbox
+                            </a><br>
+                       
+            </td>
+                    
+            <td class="TextCell">
+                         In the C API, gdImageStringFt returns the bounding box of the 
+                         string. If you need the bounding box without drawing the string,
+                         you pass a null gdImagePointer. Since OCaml doesn't really have
+                         null pointers, the ft_bbox function simply calls a C function
+                         that passes a null gdImagePtr to gdImageStringFT.
+                       
+            </td>
+                  
+         </tr>
+               
+         <tr>
+                    
+            <td class="NameCell">
+                         <a href="http://www.boutell.com/gd/manual2.0.15.html#gdImageStringFTEx">
+                              gdImageStringFTEx
+                            </a><br>
+                       
+            </td>
+                    
+            <td class="BoolCell">
+                         [4]
+                       
+            </td>
+                    
+            <td class="NameCell">
+                         <a href="Gd.image.html#METHODstring_ftex">
+                              #image#string_ftex
+                            </a><br> &amp;
+                         <a href="Gd.image.html#METHODftex_bbox">
+                              ftex_bbox
+                            </a><br>
+                       
+            </td>
+                    
+            <td class="TextCell">
+                         Partially implemented. Supports multiline text, but not yet
+                         double-byte characters. See also notes for gdImageStringFT.
+                       
+            </td>
+                  
+         </tr>
+               
+         <tr>
+                    
+            <td class="NameCell">
+                         <a href="http://www.boutell.com/gd/manual2.0.15.html#gdImageStringTTF">
+                              gdImageStringTTF
+                            </a><br>
+                       
+            </td>
+                    
+            <td class="BoolCell">
+                       
+            </td>
+                    
+            <td class="NameCell">
+                       
+            </td>
+                    
+            <td class="TextCell">
+                       
+            </td>
+                  
+         </tr>
+             
+      </table>
+        <a name="funcs.color"></a>
+          
+      <h2>
+               Color-handling functions
+             
+      </h2>
+          
+      <table border="1" class="CoolTable1" width="96%" cellspacing="2" cellpadding="4">
+               
+         <tr>
+                    
+            <th>
+                         C Function
+                       
+            </th>
+                    
+            <th>
+                         When
+                       
+            </th>
+                    
+            <th>
+                         OCaml Function
+                       
+            </th>
+                    
+            <th>
+                         Comments 
+                       
+            </th>
+                  
+         </tr>
+               
+         <tr>
+                    
+            <td class="XCell">
+                         <a href="http://www.boutell.com/gd/manual2.0.15.html#gdImageColorAllocate">
+                              gdImageColorAllocate
+                            </a><br>
+                       
+            </td>
+                    
+            <td class="BoolCell">
+                         [0]
+                       
+            </td>
+                    
+            <td class="NameCell">
+                         <a href="Gd.color_allocator.html#METHODcreate">
+                              #color_allocator#create
+                            </a><br>
+                       
+            </td>
+                    
+            <td class="TextCell">
+                       
+            </td>
+                  
+         </tr>
+               
+         <tr>
+                    
+            <td class="NameCell">
+                         <a href="http://www.boutell.com/gd/manual2.0.15.html#gdImageColorAllocateAlpha">
+                              gdImageColorAllocateAlpha
+                            </a><br>
+                       
+            </td>
+                    
+            <td class="BoolCell">
+                       
+            </td>
+                    
+            <td class="NameCell">
+                       
+            </td>
+                    
+            <td class="TextCell">
+                       
+            </td>
+                  
+         </tr>
+               
+         <tr>
+                    
+            <td class="NameCell">
+                         <a href="http://www.boutell.com/gd/manual2.0.15.html#gdImageColorClosest">
+                              gdImageColorClosest
+                            </a><br>
+                       
+            </td>
+                    
+            <td class="BoolCell">
+                         [0]
+                       
+            </td>
+                    
+            <td class="NameCell">
+                         <a href="Gd.color_allocator.html#METHODclosest">
+                              #color_allocator#closest
+                            </a><br>
+                       
+            </td>
+                    
+            <td class="TextCell">
+                       
+            </td>
+                  
+         </tr>
+               
+         <tr>
+                    
+            <td class="NameCell">
+                         <a href="http://www.boutell.com/gd/manual2.0.15.html#gdImageColorClosestAlpha">
+                              gdImageColorClosestAlpha
+                            </a><br>
+                       
+            </td>
+                    
+            <td class="BoolCell">
+                       
+            </td>
+                    
+            <td class="NameCell">
+                       
+            </td>
+                    
+            <td class="TextCell">
+                       
+            </td>
+                  
+         </tr>
+               
+         <tr>
+                    
+            <td class="NameCell">
+                         <a href="http://www.boutell.com/gd/manual2.0.15.html#gdImageColorClosestHWB">
+                              gdImageColorClosestHWB
+                            </a><br>
+                       
+            </td>
+                    
+            <td class="BoolCell">
+                         [0]
+                       
+            </td>
+                    
+            <td class="NameCell">
+                         <a href="Gd.color_allocator.html#METHODclosest_hwb">
+                              #collor_allocator#closest_hwb
+                            </a><br>
+                       
+            </td>
+                    
+            <td class="TextCell">
+                       
+            </td>
+                  
+         </tr>
+               
+         <tr>
+                    
+            <td class="NameCell">
+                         <a href="http://www.boutell.com/gd/manual2.0.15.html#gdImageColorExact">
+                              gdImageColorExact
+                            </a><br>
+                       
+            </td>
+                    
+            <td class="BoolCell">
+                         [0]
+                       
+            </td>
+                    
+            <td class="NameCell">
+                         <a href="Gd.color_allocator.html#METHODexact">
+                              #collor_allocator#exact
+                            </a><br>
+                       
+            </td>
+                    
+            <td class="TextCell">
+                       
+            </td>
+                  
+         </tr>
+               
+         <tr>
+                    
+            <td class="NameCell">
+                         <a href="http://www.boutell.com/gd/manual2.0.15.html#gdImageColorResolve">
+                              gdImageColorResolve
+                            </a><br>
+                       
+            </td>
+                    
+            <td class="BoolCell">
+                         [0]
+                       
+            </td>
+                    
+            <td class="NameCell">
+                         <a href="Gd.color_allocator.html#METHODresolve">
+                              #collor_allocator#resolve
+                            </a><br>
+                       
+            </td>
+                    
+            <td class="TextCell">
+                       
+            </td>
+                  
+         </tr>
+               
+         <tr>
+                    
+            <td class="NameCell">
+                         <a href="http://www.boutell.com/gd/manual2.0.15.html#gdImageColorResolveAlpha">
+                              gdImageColorResolveAlpha
+                            </a><br>
+                       
+            </td>
+                    
+            <td class="BoolCell">
+                       
+            </td>
+                    
+            <td class="NameCell">
+                       
+            </td>
+                    
+            <td class="TextCell">
+                       
+            </td>
+                  
+         </tr>
+               
+         <tr>
+                    
+            <td class="NameCell">
+                         <a href="http://www.boutell.com/gd/manual2.0.15.html#gdImageColorsTotal">
+                              gdImageColorsTotal
+                            </a><br>
+                       
+            </td>
+                    
+            <td class="BoolCell">
+                       
+            </td>
+                    
+            <td class="NameCell">
+                       
+            </td>
+                    
+            <td class="TextCell">
+                       
+            </td>
+                  
+         </tr>
+               
+         <tr>
+                    
+            <td class="NameCell">
+                         <a href="http://www.boutell.com/gd/manual2.0.15.html#gdImageRed">
+                              gdImageRed
+                            </a><br>
+                       
+            </td>
+                    
+            <td class="BoolCell">
+                         [0]
+                       
+            </td>
+                    
+            <td class="NameCell">
+                         <a href="Gd.color_allocator.html#METHODred">
+                              #collor_allocator#red
+                            </a><br>
+                       
+            </td>
+                    
+            <td class="TextCell">
+                       
+            </td>
+                  
+         </tr>
+               
+         <tr>
+                    
+            <td class="NameCell">
+                         <a href="http://www.boutell.com/gd/manual2.0.15.html#gdImageGreen">
+                              gdImageGreen
+                            </a><br>
+                       
+            </td>
+                    
+            <td class="BoolCell">
+                         [0]
+                       
+            </td>
+                    
+            <td class="NameCell">
+                         <a href="Gd.color_allocator.html#METHODgreen">
+                              #collor_allocator#green
+                            </a><br>
+                       
+            </td>
+                    
+            <td class="TextCell">
+                       
+            </td>
+                  
+         </tr>
+               
+         <tr>
+                    
+            <td class="NameCell">
+                         <a href="http://www.boutell.com/gd/manual2.0.15.html#gdImageBlue">
+                              gdImageBlue
+                            </a><br>
+                       
+            </td>
+                    
+            <td class="BoolCell">
+                         [0]
+                       
+            </td>
+                    
+            <td class="NameCell">
+                         <a href="Gd.color_allocator.html#METHODblue">
+                              #collor_allocator#blue
+                            </a><br>
+                       
+            </td>
+                    
+            <td class="TextCell">
+                       
+            </td>
+                  
+         </tr>
+               
+         <tr>
+                    
+            <td class="NameCell">
+                         <a href="http://www.boutell.com/gd/manual2.0.15.html#gdImageGetInterlaced">
+                              gdImageGetInterlaced
+                            </a><br>
+                       
+            </td>
+                    
+            <td class="BoolCell">
+                       
+            </td>
+                    
+            <td class="NameCell">
+                       
+            </td>
+                    
+            <td class="TextCell">
+                       
+            </td>
+                  
+         </tr>
+               
+         <tr>
+                    
+            <td class="NameCell">
+                         <a href="http://www.boutell.com/gd/manual2.0.15.html#gdImageGetTransparent">
+                              gdImageGetTransparent
+                            </a><br>
+                       
+            </td>
+                    
+            <td class="BoolCell">
+                         [0]
+                       
+            </td>
+                    
+            <td class="NameCell">
+                         <a href="Gd.color_allocator.html#METHODtransparent">
+                              #collor_allocator#get_transparent
+                            </a><br>
+                       
+            </td>
+                    
+            <td class="TextCell">
+                         Name changed to conform more closely to the C API. The previous name, '#transparent',
+                         is now used for the method corresponding to gdImageTransparent.
+                       
+            </td>
+                  
+         </tr>
+               
+         <tr>
+                    
+            <td class="NameCell">
+                         <a href="http://www.boutell.com/gd/manual2.0.15.html#gdImageColorDeallocate">
+                              gdImageColorDeallocate
+                            </a><br>
+                       
+            </td>
+                    
+            <td class="BoolCell">
+                       
+            </td>
+                    
+            <td class="NameCell">
+                       
+            </td>
+                    
+            <td class="TextCell">
+                       
+            </td>
+                  
+         </tr>
+               
+         <tr>
+                    
+            <td class="NameCell">
+                         <a href="http://www.boutell.com/gd/manual2.0.15.html#gdImageColorTransparent">
+                              gdImageColorTransparent
+                            </a><br>
+                       
+            </td>
+                    
+            <td class="BoolCell">
+                         [2]
+                       
+            </td>
+                    
+            <td class="NameCell">
+                         <a href="Gd.color_allocator.html#METHODset_transparent">
+                              #color_allocator#set_transparent
+                            </a><br>
+                       
+            </td>
+                    
+            <td class="TextCell">
+                       
+            </td>
+                  
+         </tr>
+               
+         <tr>
+                    
+            <td class="NameCell">
+                         <a href="http://www.boutell.com/gd/manual2.0.15.html#gdImageTrueColor">
+                              gdImageTrueColor
+                            </a><br>
+                       
+            </td>
+                    
+            <td class="BoolCell">
+                       
+            </td>
+                    
+            <td class="NameCell">
+                       
+            </td>
+                    
+            <td class="TextCell">
+                       
+            </td>
+                  
+         </tr>
+               
+         <tr>
+                    
+            <td class="NameCell">
+                         <a href="http://www.boutell.com/gd/manual2.0.15.html#gdImageTrueColorAlpha">
+                              gdImageTrueColorAlpha
+                            </a><br>
+                       
+            </td>
+                    
+            <td class="BoolCell">
+                       
+            </td>
+                    
+            <td class="NameCell">
+                       
+            </td>
+                    
+            <td class="TextCell">
+                       
+            </td>
+                  
+         </tr>
+             
+      </table>
+        <a name="funcs.copying"></a>
+          
+      <h2>
+               Copying and resizing functions
+             
+      </h2>
+          
+      <table border="1" class="CoolTable1" width="96%" cellspacing="2" cellpadding="4">
+               
+         <tr>
+                    
+            <th>
+                         C Function
+                       
+            </th>
+                    
+            <th>
+                         When
+                       
+            </th>
+                    
+            <th>
+                         OCaml Function
+                       
+            </th>
+                    
+            <th>
+                         Comments 
+                       
+            </th>
+                  
+         </tr>
+               
+         <tr>
+                    
+            <td class="NameCell">
+                         <a href="http://www.boutell.com/gd/manual2.0.15.html#gdImageCopy">
+                              gdImageCopy
+                            </a><br>
+                       
+            </td>
+                    
+            <td class="BoolCell">
+                         [5] 
+                       
+            </td>
+                    
+            <td class="NameCell">
+                         <a href="Gd.image.html#METHODcopy">
+                              #image#copy
+                            </a><br>
+                       
+            </td>
+                    
+            <td class="TextCell">
+                       
+            </td>
+                  
+         </tr>
+               
+         <tr>
+                    
+            <td class="NameCell">
+                         <a href="http://www.boutell.com/gd/manual2.0.15.html#gdImageCopyResized">
+                              gdImageCopyResized
+                            </a><br>
+                       
+            </td>
+                    
+            <td class="BoolCell">
+                         [5] 
+                       
+            </td>
+                    
+            <td class="NameCell">
+                         <a href="Gd.image.html#METHODcopy_resized">
+                              #image#copy_resized
+                            </a><br>
+                       
+            </td>
+                    
+            <td class="TextCell">
+                       
+            </td>
+                  
+         </tr>
+               
+         <tr>
+                    
+            <td class="NameCell">
+                         <a href="http://www.boutell.com/gd/manual2.0.15.html#gdImageCopyResampled">
+                              gdImageCopyResampled
+                            </a><br>
+                       
+            </td>
+                    
+            <td class="BoolCell">
+                         [5] 
+                       
+            </td>
+                    
+            <td class="NameCell">
+                         <a href="Gd.image.html#METHODcopy_resized">
+                              #image#copy_resampled
+                            </a><br>
+                       
+            </td>
+                    
+            <td class="TextCell">
+                       
+            </td>
+                  
+         </tr>
+               
+         <tr>
+                    
+            <td class="NameCell">
+                         <a href="http://www.boutell.com/gd/manual2.0.15.html#gdImageCopyRotated">
+                              gdImageCopyRotated
+                            </a><br>
+                       
+            </td>
+                    
+            <td class="BoolCell">
+                         [5] 
+                       
+            </td>
+                    
+            <td class="NameCell">
+                         <a href="Gd.image.html#METHODcopy_rotated">
+                              #image#copy_rotated
+                            </a><br>
+                       
+            </td>
+                    
+            <td class="TextCell">
+                       
+            </td>
+                  
+         </tr>
+               
+         <tr>
+                    
+            <td class="NameCell">
+                         <a href="http://www.boutell.com/gd/manual2.0.15.html#gdImageCopyMerge">
+                              gdImageCopyMerge
+                            </a><br>
+                       
+            </td>
+                    
+            <td class="BoolCell">
+                         [5] 
+                       
+            </td>
+                    
+            <td class="NameCell">
+                         <a href="Gd.image.html#METHODcopy_merge">
+                              #image#copy_merge
+                            </a><br>
+                       
+            </td>
+                    
+            <td class="TextCell">
+                       
+            </td>
+                  
+         </tr>
+               
+         <tr>
+                    
+            <td class="NameCell">
+                         <a href="http://www.boutell.com/gd/manual2.0.15.html#gdImageCopyMergeGray">
+                              gdImageCopyMergeGray
+                            </a><br>
+                       
+            </td>
+                    
+            <td class="BoolCell">
+                         [5] 
+                       
+            </td>
+                    
+            <td class="NameCell">
+                         <a href="Gd.image.html#METHODcopy_merge_gray">
+                              #image#copy_merge_gray
+                            </a><br>
+                       
+            </td>
+                    
+            <td class="TextCell">
+                       
+            </td>
+                  
+         </tr>
+               
+         <tr>
+                    
+            <td class="NameCell">
+                         <a href="http://www.boutell.com/gd/manual2.0.15.html#gdImagePaletteCopy">
+                              gdImagePaletteCopy
+                            </a><br>
+                       
+            </td>
+                    
+            <td class="BoolCell">
+                         [5] 
+                       
+            </td>
+                    
+            <td class="NameCell">
+                         <a href="Gd.image.html#METHODpalette_copy">
+                              #image#palette_copy
+                            </a><br>
+                       
+            </td>
+                    
+            <td class="TextCell">
+                       
+            </td>
+                  
+         </tr>
+             
+      </table>
+        <a name="funcs.misc"></a>
+          
+      <h2>
+               Miscellaneous functions
+             
+      </h2>
+          
+      <table border="1" class="CoolTable1" width="96%" cellspacing="2" cellpadding="4">
+               
+         <tr>
+                    
+            <th>
+                         C Function
+                       
+            </th>
+                    
+            <th>
+                         When
+                       
+            </th>
+                    
+            <th>
+                         OCaml Function
+                       
+            </th>
+                    
+            <th>
+                         Comments 
+                       
+            </th>
+                  
+         </tr>
+               
+         <tr>
+                    
+            <td class="NameCell">
+                         <a href="http://www.boutell.com/gd/manual2.0.15.html#gdImageCompare">
+                              gdImageCompare
+                            </a><br>
+                       
+            </td>
+                    
+            <td class="BoolCell">
+                       
+            </td>
+                    
+            <td class="NameCell">
+                       
+            </td>
+                    
+            <td class="TextCell">
+                       
+            </td>
+                  
+         </tr>
+               
+         <tr>
+                    
+            <td class="NameCell">
+                         <a href="http://www.boutell.com/gd/manual2.0.15.html#gdImageInterlace">
+                              gdImageInterlace
+                            </a><br>
+                       
+            </td>
+                    
+            <td class="BoolCell">
+                       
+            </td>
+                    
+            <td class="NameCell">
+                       
+            </td>
+                    
+            <td class="TextCell">
+                       
+            </td>
+                  
+         </tr>
+               
+         <tr>
+                    
+            <td class="NameCell">
+                         <a href="http://www.boutell.com/gd/manual2.0.15.html#gdFree">
+                              gdFree
+                            </a><br>
+                       
+            </td>
+                    
+            <td class="BoolCell">
+                       
+            </td>
+                    
+            <td class="NameCell">
+                       
+            </td>
+                    
+            <td class="TextCell">
+                       
+            </td>
+                  
+         </tr>
+             
+      </table>
+        
+      <hr>
+      <center>
+         <p CLASS="PageInfo"><font size="-1"><em>
+                  Copyright &copy; 2003 by
+                  <a href="mailto:mgushee@havenrock.com">
+                     Matt Gushee
+                     </a>&nbsp;&nbsp;::&nbsp;&nbsp;Last modified:&nbsp;
+                  Nov. 24, 2003</em></font></p>
+      </center>
+   </body>
+</html>

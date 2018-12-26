@@ -1,0 +1,127 @@
+This is not yet complete documentation!
+
+Images:
+
+Images are objects. However, they should not be created with new
+directly. Instead, use the functions in the next section to create
+them.
+
+Creating images:
+
+Images can be created from scratch, or from an existing file.
+ 
+ Gd.create: ~x:int -> ~y:int -> image
+  Creates a new image with the given dimensions.
+
+ Gd.open_png: string -> image
+  Creates a new image from the given png file.
+ Gd.open_jpeg: string -> image
+  Creates a new image from the given jpeg file. Raises Gd.Not_supported
+  if jpeg operations aren't compiled in.
+
+Saving images:
+ 
+ Images can be saved to PNG files, or to jpeg's if Gd and OcamlGd are compiled
+ with jpeg support.
+
+ image#save_as_png: string -> unit
+ Saves a png version of the image to the file.
+ 
+ image:save_as_jpeg: ?quality:int -> string -> unit
+ Saves a jpeg version of the image to the file, with the given
+ image quality or a reasonable default. Quality is from 0 to 95,
+ the higher the more quality and larger the file. Raises Gd.Not_supported
+ if jpeg operations aren't compiled in.
+
+ image#out_as_png: out_channel -> unit
+ image#out_as_jpeg: ?quality:int -> out_channel -> unit
+ Dumps the image in the proper format to the out_channel. Useful for
+ things like a CGI program that wants to dump an image to stdout.
+ out_as_jpeg raises Gd.Not_supported if jpeg operations aren't compiled
+ in.
+
+Colors:
+ Each image can have up to 255 different colors. The first color assigned
+ will be the image's default background color. All colors for an object
+ are created and looked up through a color_allocator object associated with
+ the image object. This can be accessed through the colors method.
+
+ E.g: let my_colors = myimage#colors;;
+
+ Colors themselves are another class, with three public methods, for
+ getting the red, green and blue componets of the color. red_part,
+ green_part, and blue_part.
+
+ Color allocators have a number of methods for predefined color names:
+ white, black, red, green, blue and transparent.
+
+ colors#create: ~red:int -> ~green:int -> ~blue:int -> Gd.color
+  Creates a new color for the associated image. Raises Gd.Too_many_colors
+  if more than 255 colors have already been assigned.
+ 
+ colors#closest: ~red:int -> ~green:int -> ~blue:int -> Gd.color
+  Looks up and returns the already created color closest to the RGB
+  values. If the lookup fails, raises Gd.Color_not_found.
+ 
+ colors#exact: ~red:int -> ~green:int -> ~blue:int -> Gd.color
+  Looks up and returns the already created color exactly matching the RGB
+  values. If the lookup fails, raises Gd.Color_not_found.
+
+Fonts:
+
+ There are 5 different fonts available for drawing text, all in the
+ Gd.Font module. Unlike colors, they are independant of image. Listed
+ here, in order of increasing size.
+
+  Gd.Font.tiny
+  Gd.Font.small
+  Gd.Font.medium
+  Gd.Font.large
+  Gd.Font.giant
+
+Text:
+ There are four methods for drawing text - two for single characters,
+ two for strings.
+
+ image#letter: font:Gd.font -> x:int -> y:int -> c:char -> Gd.color -> unit
+ image#letter_up: font:Gd.font -> x:int -> y:int -> c:char -> Gd.color -> unit
+
+  Draw a single character. letter goes from left to right, letter_up
+  bottom to top, rotated 90 degrees.
+
+ image#string: font:Gd.font -> x:int -> y:int -> s:string -> Gd.color -> unit
+ image#string_up: font:Gd.font -> x:int -> y:int -> s:string -> Gd.color -> unit
+
+  Draw a string. Letters go from left to right in string, and
+  string_up does bottom to top, rotated 90 degrees.
+
+Lines:
+  There are two methods for drawing straight lines, and one for arcs:
+
+ image#line: x1:int -> y1:int -> x2:int -> y2:int -> color -> unit
+ image#dashed_line: x1:int -> y1:int -> x2:int -> y2:int -> color -> unit
+ image#arc: cx:int -> cy:int -> w:int -> h:int -> s:int -> e:int -> color -> unit
+
+
+Shapes and coloring:
+
+ image#rectangle: x1:int -> y1:int -> x2:int -> y2:int -> color -> unit
+ image#filled_rectangle: x1:int -> y1:int -> x2:int -> y2:int -> color -> unit
+ image#border_fill: x:int -> y:int -> border:color -> fill:color -> unit
+ image#virtual fill: x:int -> y:int -> color -> unit 
+
+Individual pixels:
+
+ image#set_pixel: x:int -> y:int -> color -> unit
+ image#get_pixel: x:int -> y:int -> color
+
+Information about the image:
+ There are a few methods for finding out information about the image. They do
+ the obvious things. in_range returns true if the image is large enough to
+ have a pixel at the given coordinates.
+
+ image#width : int
+ image#height : int
+ image#in_range: x:int -> y:int -> bool
+
+ 

@@ -1,0 +1,30 @@
+Ocaml-GD 0.5
+
+This is an interface to the GD graphics library for Ocaml.
+It's used to make simple graphic images, usually in the png format.
+
+The interface tends to follow the GD functions.
+
+And unlike a lot of ocaml libraries, this uses it's OO features. It
+also uses labels, though it should be possible to use it in code that
+doesn't. It uses labels because many of the functions take many int
+arguments, and the labels helps (Me, at least) to keep everything
+straight. And if you forget the order, it's no big deal.
+
+There's an image class, and color and font allocation classes, and a
+color class.  Thus, drawing a red line might look like:
+
+myimage#line ~x1:0 ~y1:0 ~x2:60 ~y2:30 myimage#colors#red
+
+intead of
+
+Gd.line myimage ~x1:0 ~y1:0 ~x2:60 ~y2:30 (Gd.red myimage)
+
+See manual.txt and gd.mli for documentation.
+
+TODO:
+Interlaced images
+Serialization?
+Reading and writing more image formats.
+Brushes
+Polygons
