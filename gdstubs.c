@@ -73,6 +73,7 @@ static struct custom_operations image_t_custom_operations = {
   NULL,
   ml_gd_hash,
   NULL,
+  NULL,
   NULL
 };
 
@@ -81,6 +82,7 @@ static struct custom_operations font_t_custom_operations = {
   NULL,
   ml_font_cmp,
   ml_font_hash,
+  NULL,
   NULL,
   NULL
 };
@@ -114,7 +116,7 @@ long ml_gd_hash(value v) {
 }
 
 int ml_font_cmp(value v1, value v2) {
-  return (int)FONT_VAL(v1) - (int)FONT_VAL(v2);
+  return (long)FONT_VAL(v1) - (long)FONT_VAL(v2);
 }
 
 static long ml_font_hash(value v) {
@@ -524,7 +526,7 @@ value ml_image_charu(value *argv, int argc) {
 value ml_image_str_native(value gdw, value font, value x, value y, value s,
                            value color) {
   gdImageString(IM_VAL(gdw), FONT_VAL(font), Int_val(x), Int_val(y),
-                String_val(s), Int_val(color));
+                (unsigned char*)String_val(s), Int_val(color));
   return Val_unit;
 }
 
@@ -539,7 +541,7 @@ value ml_image_str(value *argv, int argc) {
 value ml_image_stru_native(value gdw, value font, value x, value y, value s,
                             value color) {
   gdImageStringUp(IM_VAL(gdw), FONT_VAL(font), Int_val(x), Int_val(y),
-                  String_val(s), Int_val(color));
+                  (unsigned char*)String_val(s), Int_val(color));
   return Val_unit;
 }
 
