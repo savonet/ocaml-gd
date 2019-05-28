@@ -26,7 +26,7 @@ endif
 ifdef FT2_LIB
 FT2_FLAG = -DHAVE_FREETYPE
 endif
-CFLAGS = $(CINCLUDES) -W -Wall -Wno-unused \
+CFLAGS = $(CINCLUDES) -fPIC -W -Wall -Wno-unused \
 	$(JPEG_FLAG) $(FT2_FLAG) $(SAFETY_FLAG)
 
 OCAMLCFLAGS=-labels -unsafe
