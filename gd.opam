@@ -27,6 +27,5 @@ depexts: [
 ]
 bug-reports: "https://github.com/savonet/gd4o/issues"
 dev-repo: "git+https://github.com/savonet/gd4o.git"
-synopsis:
-  "OCaml interface to the GD graphics library."
+synopsis: "OCaml interface to the GD graphics library"
 flags: light-uninstall
