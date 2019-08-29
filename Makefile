@@ -90,7 +90,7 @@ docs : gd.mli
 
 install :
 	files=$$( \
-		for f in $(BYTE_ARCHIVE) gd.cmx $(NAT_ARCHIVE) $(STUBLIBS) \
+		for f in $(BYTE_ARCHIVE) gd.cmx $(NAT_OBJECTS) $(NAT_ARCHIVE) $(STUBLIBS) \
 			*.mli *.cmi gd.a META; do \
 			if [ -f "$$f" ]; then echo $$f; fi; \
 		done; \
