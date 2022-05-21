@@ -1,0 +1,12 @@
+(executable
+  (name gdtest)
+  (modules gdtest)
+  (libraries str gd))
+
+(rule
+ (alias runtest)
+ (deps
+  (source_tree ./samples)
+  (:gdtest ./gdtest.exe))
+ (action
+  (run %{gdtest})))

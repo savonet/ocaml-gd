@@ -1,5 +1,0 @@
-name = "gd"
-version = "1.0a5"
-description = "Wrapper for the GD graphics library"
-archive(byte) = "gd.cma"
-archive(native) = "gd.cmxa"
