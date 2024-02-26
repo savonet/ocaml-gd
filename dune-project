@@ -1,5 +1,5 @@
 (lang dune 2.8)
-(version 0.5.1)
+(version 1.1)
 (name gd)
 (source (github savonet/ocaml-gd))
 (license LGPL-2.1)
