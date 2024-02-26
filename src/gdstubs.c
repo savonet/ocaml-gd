@@ -24,6 +24,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+#define CAML_NAME_SPACE 1
+
 #include <caml/alloc.h>
 #include <caml/callback.h>
 #include <caml/custom.h>
@@ -97,7 +99,7 @@ value ml_get_font(value i) {
   CAMLparam1(i);
   CAMLlocal1(v);
 
-  v = alloc_custom(&font_t_custom_operations, sizeof(GdFWrapper), 1, 10);
+  v = caml_alloc_custom(&font_t_custom_operations, sizeof(GdFWrapper), 1, 10);
 
   if (!fonts_init) {
     fonts[0] = gdFontTiny;
@@ -120,9 +122,9 @@ value ml_image_create(value sx, value sy) {
 
   im = gdImageCreate(Int_val(sx), Int_val(sy));
   if (!im)
-    raise_constant(*(value *)caml_named_value("gdopen failed"));
+    caml_raise_constant(*(value *)caml_named_value("gdopen failed"));
 
-  v = alloc_custom(&image_t_custom_operations, sizeof(GdWrapper),
+  v = caml_alloc_custom(&image_t_custom_operations, sizeof(GdWrapper),
                    (Int_val(sx) * Int_val(sy)) + sizeof(gdImage), 10000);
   IM_VAL(v) = im;
 
@@ -136,9 +138,9 @@ value ml_image_create_truecolor(value sx, value sy) {
 
   im = gdImageCreateTrueColor(Int_val(sx), Int_val(sy));
   if (!im)
-    raise_constant(*(value *)caml_named_value("gdopen failed"));
+    caml_raise_constant(*(value *)caml_named_value("gdopen failed"));
 
-  v = alloc_custom(&image_t_custom_operations, sizeof(GdWrapper),
+  v = caml_alloc_custom(&image_t_custom_operations, sizeof(GdWrapper),
                    (Int_val(sx) * Int_val(sy)) + sizeof(gdImage), 10000);
   IM_VAL(v) = im;
 
@@ -153,16 +155,16 @@ value ml_image_open_png(value filename) {
 
   in = fopen(String_val(filename), "rb");
   if (!in)
-    raise_not_found();
+    caml_raise_not_found();
 
   im = gdImageCreateFromPng(in);
 
   fclose(in);
 
   if (!im)
-    raise_constant(*(value *)caml_named_value("gdopen failed"));
+    caml_raise_constant(*(value *)caml_named_value("gdopen failed"));
 
-  v = alloc_custom(&image_t_custom_operations, sizeof(GdWrapper),
+  v = caml_alloc_custom(&image_t_custom_operations, sizeof(GdWrapper),
                    sizeof(gdImage) + (gdImageSX(im) * gdImageSY(im)), 100000);
   IM_VAL(v) = im;
 
@@ -190,21 +192,21 @@ value ml_image_open_jpeg(value filename) {
 
   in = fopen(String_val(filename), "rb");
   if (!in)
-    raise_not_found();
+    caml_raise_not_found();
 
   im = gdImageCreateFromJpeg(in);
 
   fclose(in);
 
   if (!im)
-    raise_constant(*(value *)caml_named_value("gdopen failed"));
+    caml_raise_constant(*(value *)caml_named_value("gdopen failed"));
 
-  v = alloc_custom(&image_t_custom_operations, sizeof(GdWrapper),
+  v = caml_alloc_custom(&image_t_custom_operations, sizeof(GdWrapper),
                    sizeof(gdImage) + (gdImageSX(im) * gdImageSY(im)), 100000);
   IM_VAL(v) = im;
   CAMLreturn(v);
 #else
-  raise_constant(*(value *)caml_named_value("gd type not supported"));
+  caml_raise_constant(*(value *)caml_named_value("gd type not supported"));
   return Val_unit;
 #endif
 }
@@ -526,7 +528,7 @@ value ml_image_stru(value *argv, int argc) {
 }
 
 void raise_freetype_exception(char *msg) {
-  raise_with_string(*caml_named_value("gd freetype exception"), msg);
+  caml_raise_with_string(*caml_named_value("gd freetype exception"), msg);
 }
 
 value ml_image_str_ft_base(gdImagePtr im, value fg, value fname, value size,
@@ -556,7 +558,7 @@ value ml_image_str_ft_base(gdImagePtr im, value fg, value fname, value size,
 
   CAMLreturn(ml_brect);
 #else
-  raise_constant(*(value *)caml_named_value("gd type not supported"));
+  caml_raise_constant(*(value *)caml_named_value("gd type not supported"));
   return Val_unit;
 #endif
 }
@@ -629,7 +631,7 @@ value ml_image_str_ftex_base(gdImagePtr im, value fg, value fname, value size,
 
   CAMLreturn(ml_brect);
 #else
-  raise_constant(*(value *)caml_named_value("gd type not supported"));
+  caml_raise_constant(*(value *)caml_named_value("gd type not supported"));
   return Val_unit;
 #endif
 }
@@ -703,14 +705,14 @@ value ml_save_jpeg(value gdw, value filename, value quality) {
   gdImageJpeg(IM_VAL(gdw), out, Int_val(quality));
   fclose(out);
 #else
-  raise_constant(*(value *)caml_named_value("gd type not supported"));
+  caml_raise_constant(*(value *)caml_named_value("gd type not supported"));
 #endif
   return Val_unit;
 }
 
 /* Taken from the ocaml source... */
 struct channel;
-void really_putblock(struct channel *, char *, long);
+void caml_really_putblock(struct channel *, char *, long);
 
 /* Extract a struct channel * from the heap object representing it */
 #define Channel(v) (*((struct channel **)(Data_custom_val(v))))
@@ -720,7 +722,7 @@ value ml_dump_png(value gdw, value chan) {
   void *dat;
 
   dat = gdImagePngPtr(IM_VAL(gdw), &size);
-  really_putblock(Channel(chan), dat, size);
+  caml_really_putblock(Channel(chan), dat, size);
   free(dat);
 
   return Val_unit;
@@ -732,11 +734,11 @@ value ml_dump_jpeg(value gdw, value chan, value quality) {
   void *dat;
 
   dat = gdImageJpegPtr(IM_VAL(gdw), &size, Int_val(quality));
-  really_putblock(Channel(chan), dat, size);
+  caml_really_putblock(Channel(chan), dat, size);
   free(dat);
 
 #else
-  raise_constant(*(value *)caml_named_value("gd type not supported"));
+  caml_raise_constant(*(value *)caml_named_value("gd type not supported"));
 #endif
   return Val_unit;
 }
