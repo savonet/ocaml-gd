@@ -2,7 +2,7 @@
 (version 1.1)
 (name gd)
 (source (github savonet/ocaml-gd))
-(license LGPL-2.1)
+(license LGPL-2.1-only)
 (authors "The Savonet Team <savonet-users@lists.sourceforge.net>")
 (maintainers "Romain Beauxis <toots@rastageeks.org>")
 

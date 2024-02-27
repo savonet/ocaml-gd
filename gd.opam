@@ -4,7 +4,7 @@ version: "1.1"
 synopsis: "OCaml interface to the GD graphics library."
 maintainer: ["Romain Beauxis <toots@rastageeks.org>"]
 authors: ["The Savonet Team <savonet-users@lists.sourceforge.net>"]
-license: "LGPL-2.1"
+license: "LGPL-2.1-only"
 homepage: "https://github.com/savonet/ocaml-gd"
 bug-reports: "https://github.com/savonet/ocaml-gd/issues"
 depends: [
